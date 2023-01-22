@@ -44,6 +44,7 @@ https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=
 - Extra features for free
 
 3. MVC Architecture
+![MVC architecture](https://user-images.githubusercontent.com/52660296/213944784-a2a2c316-48e0-4ce5-b450-2287350e6ea4.PNG)
 
 ---
 
