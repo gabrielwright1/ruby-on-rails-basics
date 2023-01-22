@@ -1,5 +1,5 @@
 # Ruby on Rails Learning Plan
-Link: https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980
+https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980
 
 ## Courses:
 - Ruby on Rails 7 Essentials Training
