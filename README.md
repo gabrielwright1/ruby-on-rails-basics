@@ -9,6 +9,29 @@ https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=762819
 - Ruby on Rails Models and Associations
 - Ruby on Rails Debugging
 
+## Overview of topics:
+
+1. Getting Started
+2. Controllers, Views, and Dynamic Content
+3. Databases and Migrations
+4. Models and ActiveRecord
+5. CRUD, REST, and Resourceful Routes
+6. Controllers and CRUD
+7. Useful Controller Features
+8. Rendering Views
+9. Incorporating Assets
+10. Work Faster with Helpers
+11. Smarter Models
+12. Data Validations
+13. ActiveRecord Callbacks
+14. ActiveRecord Associations
+15. Backtraces
+16. Debugging in Templates
+17. Binary Searching
+18. Logging
+19. Interactive Debugging
+20. Fixing Common Errors and Researching
+
 ---
 
 # Ruby on Rails 7 Essential Training:
@@ -44,7 +67,50 @@ https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=
 - Extra features for free
 
 3. MVC Architecture
-![MVC architecture](https://user-images.githubusercontent.com/52660296/213944784-a2a2c316-48e0-4ce5-b450-2287350e6ea4.PNG)
+
+- Controller listens for events on the webpage in the browser
+- Controller asks the model for information
+- Model asks database for data via query/mutation
+- Model returns data to controller, which updates the view
+- View is displayed on the webpage in the browser
+  ![MVC architecture](https://user-images.githubusercontent.com/52660296/213944784-a2a2c316-48e0-4ce5-b450-2287350e6ea4.PNG)
+
+#### Creating a new project
+
+1. Create a folder called "Sites" and store the projects within it rather than the root directory/program files (Windows)
+2. Run the following commands:
+
+```ruby
+cd Sites
+rails new project_name -d mysql
+rails new --help
+cd project_name
+```
+
+#### Configure project
+
+1. a) Configure the database (assuming you have a user with db create privileges):
+
+- Edit "config/database.yml" file
+- Add database username and password to yml file
+- Run the following command (creates dev/test databases):
+
+```ruby
+rails db:create
+```
+
+1. b) Alternative method to create db (if you don't have a user with db create privileges)
+
+- Create a database manually using the following commands:
+
+```sql
+CREATE DATABASE db_name;
+CREATE USER 'username'@'localhost'
+IDENTIFIED BY 'secretpassword';
+
+GRANT ALL PRIVILEGES ON db_name.*
+TO 'username'@'localhost';
+```
 
 ---
 
