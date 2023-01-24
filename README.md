@@ -112,6 +112,28 @@ GRANT ALL PRIVILEGES ON db_name.*
 TO 'username'@'localhost';
 ```
 
+#### Access Rails project from browser
+
+1. Start Web Server (called Puma) - in development
+
+```ruby
+rails server
+# or
+rails s
+```
+
+2. Contact Web Server
+
+      ```
+      http://localhost:3000
+      # or
+      http://127.0.0.1:3000
+      ```
+
+3. Stop Web Server
+
+`CTRL + C`
+
 ---
 
 # Ruby on Rails Controllers and Views
