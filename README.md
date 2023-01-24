@@ -73,11 +73,12 @@ https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=
 - Model asks database for data via query/mutation
 - Model returns data to controller, which updates the view
 - View is displayed on the webpage in the browser
-  ![MVC architecture](https://user-images.githubusercontent.com/52660296/213944784-a2a2c316-48e0-4ce5-b450-2287350e6ea4.PNG)
+
+![MVC architecture](https://user-images.githubusercontent.com/52660296/213944784-a2a2c316-48e0-4ce5-b450-2287350e6ea4.PNG)
 
 #### Creating a new project
 
-1. Create a folder called "Sites" and store the projects within it rather than the root directory/program files (Windows)
+1. Create a folder called 'Sites' and store the projects within it rather than the root directory/program files (Windows)
 2. Run the following commands:
 
 ```ruby
@@ -91,7 +92,7 @@ cd project_name
 
 1. a) Configure the database (assuming you have a user with db create privileges):
 
-- Edit "config/database.yml" file
+- Edit 'config/database.yml' file
 - Add database username and password to yml file
 - Run the following command (creates dev/test databases):
 
@@ -175,14 +176,14 @@ Match route (automatically generated using generator method above)
 
 ```ruby
 # Shorthand - only use if URL/conteroller action match
-get "main/index"
+get 'main/index'
 # or
-get "tasks/:id"
+get 'tasks/:id'
 
 # Alternative - use if the URL/controller action don't match
-match "main/index", to: "main#index", via: :get
+match 'main/index', to: 'main#index', via: :get
 # or
-match "tasks/:id", to: "tasks#show", via: :get
+match 'tasks/:id', to: 'tasks#show', via: :get
 
 ```
 
@@ -190,11 +191,41 @@ Root route (required for every project, at root directory)
 
 ```ruby
 # Shorthand - only use if URL/conteroller action match
-root "main#index"
+root 'main#index'
 
 # Alternative - use if the URL/controller action don't match
-match "/", to: "main#index", via: :get
+match '/', to: 'main#index', via: :get
 
+```
+
+### Controllers, Views, and Dynamic Content
+
+#### Render a view template for a browser (i.e. About page)
+
+1. Create route for 'About' page within `config/routes.rb` by typing the following:
+
+```ruby
+match 'about', to: 'main#about', via: :get
+```
+
+2. Add a action/method to the `controllers/main_controller.rb` called `about`
+3. Create a new template within `views/main/about.html.erb` called `about.html.erb`
+4. Within the `about.html.erb` file, add the following:
+
+```html
+<h2>About</h2>
+<p>Description of the task manager</p>
+<p>Created by...</p>
+```
+
+Render Template Syntax (alternative - if you don't want to use default render behaviour)
+
+```ruby
+render('main/about')
+
+# or
+
+render('about') # shorthand
 ```
 
 ---
