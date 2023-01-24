@@ -237,6 +237,17 @@ redirect_to('https://nytimes.com')
 
 ![Redirect Actions](https://user-images.githubusercontent.com/52660296/214371160-c3265380-6195-40d9-93bb-ce67cfbf7bd4.png)
 
+#### Define view templates using ERB
+
+ERB (Embedded Ruby)
+- Templating system used to embed Ruby into HTML pages
+```ruby
+<% code %>
+<%= code %>
+```
+
+Template File Naming:
+- `about.html.erb` where the template name is 'about'
 
 
 
