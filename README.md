@@ -246,8 +246,11 @@ ERB (Embedded Ruby)
 <%= code %>
 ```
 
-Template File Naming:
-`about.html.erb` where the template name is 'about'
+Template File Naming Convention:
+```erb
+# For example, 'about' is the name of the template
+about.html.erb
+```
 
 
 
