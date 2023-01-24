@@ -224,6 +224,23 @@ render('main/about')
 render('about') # shorthand
 ```
 
+#### Redirect controller actions:
+
+Rails Redirect
+```ruby
+redirect_to(controller: 'main', action: 'index')
+# or
+redirect_to(action: 'index')
+# or 
+redirect_to('https://nytimes.com')
+```
+
+![Redirect Actions](https://user-images.githubusercontent.com/52660296/214371160-c3265380-6195-40d9-93bb-ce67cfbf7bd4.png)
+
+
+
+
+
 ---
 
 # [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
