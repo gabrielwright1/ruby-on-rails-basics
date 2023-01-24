@@ -124,15 +124,15 @@ rails s
 
 2. Contact Web Server
 
-      ```
-      http://localhost:3000
-      # or
-      http://127.0.0.1:3000
-      ```
+```
+http://localhost:3000
+```
 
 3. Stop Web Server
 
-`CTRL + C`
+```
+CTRL + C
+```
 
 ---
 
