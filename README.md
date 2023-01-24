@@ -241,13 +241,13 @@ redirect_to('https://nytimes.com')
 
 ERB (Embedded Ruby)
 - Templating system used to embed Ruby into HTML pages
-```ruby
+```erb
 <% code %>
 <%= code %>
 ```
 
 Template File Naming:
-- `about.html.erb` where the template name is 'about'
+`about.html.erb` where the template name is 'about'
 
 
 
