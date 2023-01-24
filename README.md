@@ -1,6 +1,4 @@
-# Ruby on Rails Learning Plan
-
-https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980
+# [Ruby on Rails Learning Plan](https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980)
 
 ## Courses:
 
@@ -34,9 +32,7 @@ https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=762819
 
 ---
 
-# Ruby on Rails 7 Essential Training:
-
-https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980
+# [Ruby on Rails 7 Essential Training:](https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
 
 ## Sections:
 
@@ -230,9 +226,7 @@ render('about') # shorthand
 
 ---
 
-# Ruby on Rails Controllers and Views
-
-https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980
+# [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
 
 ## Sections:
 
@@ -243,9 +237,7 @@ https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn
 
 ---
 
-# Ruby on Rails Models and Associations
-
-https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980
+# [Ruby on Rails Models and Associations](https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
 
 ## Sections:
 
@@ -256,9 +248,7 @@ https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextU
 
 ---
 
-# Ruby on Rails: Debugging
-
-https://www.linkedin.com/learning/ruby-on-rails-debugging?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980
+# [Ruby on Rails: Debugging](https://www.linkedin.com/learning/ruby-on-rails-debugging?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
 
 ## Sections:
 
