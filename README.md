@@ -134,6 +134,43 @@ http://localhost:3000
 CTRL + C
 ```
 
+#### Generate a Controller and View
+
+Request loop (MVC model):
+
+```
+Browser -> Controller -> View -> Browser -> (cont'd)
+```
+
+1. Generate a controller
+
+```ruby
+# Syntax
+rails generate controller ControllerName actions
+
+# For example
+rails g controller Tasks index new edit
+rails g controller Main index
+```
+
+This does a few things:
+
+- Creates methods within our Tasks file called 'index', 'new', and 'edit'
+- Creates a method within our Main file called 'index'
+- Generates routes for each method in the `config/routes.rb` file
+
+You can check that its working by:
+
+- Enter the following into the browser:
+
+```
+http://localhost:3000/tasks/index
+
+or
+
+http://localhost:3000/main/index
+```
+
 ---
 
 # Ruby on Rails Controllers and Views
