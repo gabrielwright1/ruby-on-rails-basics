@@ -159,9 +159,7 @@ This does a few things:
 - Creates a method within our Main file called 'index'
 - Generates routes for each method in the `config/routes.rb` file
 
-You can check that its working by:
-
-- Enter the following into the browser:
+You can check that its working by visiting the following routes:
 
 ```
 http://localhost:3000/tasks/index
@@ -169,6 +167,34 @@ http://localhost:3000/tasks/index
 or
 
 http://localhost:3000/main/index
+```
+
+#### Define Routes (manually)
+
+Match route (automatically generated using generator method above)
+
+```ruby
+# Shorthand - only use if URL/conteroller action match
+get "main/index"
+# or
+get "tasks/:id"
+
+# Alternative - use if the URL/controller action don't match
+match "main/index", to: "main#index", via: :get
+# or
+match "tasks/:id", to: "tasks#show", via: :get
+
+```
+
+Root route (required for every project, at root directory)
+
+```ruby
+# Shorthand - only use if URL/conteroller action match
+root "main#index"
+
+# Alternative - use if the URL/controller action don't match
+match "/", to: "main#index", via: :get
+
 ```
 
 ---
