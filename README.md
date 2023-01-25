@@ -261,13 +261,36 @@ about.html.erb
 
 Regular vs. Instance variables:
 
-- A regular variable `variable` only has/us
+- A regular `variable` only has/us
      - Scoped within a particular actino
-- An instance variable `@instance_variable` has/is:
+- An `@instance_variable` has/is:
      - Scoped throughout the controller class and is available to all methods inside that class
      - Available to the template
      - A template can automatically access any instance variables you've set.
      - It makes it easy to pass data to your views.
+
+#### Create links to other web pages
+
+HTML Links:
+
+```html
+<a href="/main/index">Click me</a>
+```
+
+Rails Links:
+
+```ruby
+<%= link_to(text, target)%>
+```
+
+Link Targets:
+
+```ruby
+'/main/index' # shorthand
+
+{controller: 'main', action: 'index'}
+
+```
 
 ---
 
