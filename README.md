@@ -1,4 +1,4 @@
-df# [Ruby on Rails Learning Plan](https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980)
+# [Ruby on Rails Learning Plan](https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980)
 
 ## Courses:
 
@@ -261,8 +261,13 @@ about.html.erb
 
 Regular vs. Instance variables:
 
-- A regular variable `variable` only has scope within a particular actino
-- An instance variable `@instance_variable` has scope throughout the controller class and is available to all methods inside that class. Rails also makes instance variables available to the template. A template can automatically access any instance variables you've set. It makes it easy to pass data to your views.
+- A regular variable `variable` only has/us
+     - Scoped within a particular actino
+- An instance variable `@instance_variable` has/is:
+     - Scoped throughout the controller class and is available to all methods inside that class
+     - Available to the template
+     - A template can automatically access any instance variables you've set.
+     - It makes it easy to pass data to your views.
 
 ---
 
