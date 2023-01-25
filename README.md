@@ -1,4 +1,4 @@
-# [Ruby on Rails Learning Plan](https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980)
+df# [Ruby on Rails Learning Plan](https://www.linkedin.com/learning/paths/build-your-ruby-on-rails-skills?u=76281980)
 
 ## Courses:
 
@@ -227,11 +227,12 @@ render('about') # shorthand
 #### Redirect controller actions:
 
 Rails Redirect
+
 ```ruby
 redirect_to(controller: 'main', action: 'index')
 # or
 redirect_to(action: 'index')
-# or 
+# or
 redirect_to('https://nytimes.com')
 ```
 
@@ -240,20 +241,28 @@ redirect_to('https://nytimes.com')
 #### Define view templates using ERB
 
 ERB (Embedded Ruby)
+
 - Templating system used to embed Ruby into HTML pages
+
 ```erb
 <% code %>
 <%= code %>
 ```
 
 Template File Naming Convention:
+
+- For example, 'about' is the name of the template
+
 ```erb
-# For example, 'about' is the name of the template
 about.html.erb
 ```
 
+#### Instance variables to set values in a template
 
+Regular vs. Instance variables:
 
+- A regular variable `variable` only has scope within a particular actino
+- An instance variable `@instance_variable` has scope throughout the controller class and is available to all methods inside that class. Rails also makes instance variables available to the template. A template can automatically access any instance variables you've set. It makes it easy to pass data to your views.
 
 ---
 
