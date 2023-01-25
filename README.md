@@ -442,6 +442,55 @@ rails db:migrate VERSION=20221231235959
 
 ### Models and ActiveRecord
 
+ActiveRecord
+
+- Design pattern for relational databases
+- Retrieve and manipulate data as objects not as static rows
+
+ActiveRecord Objects are "Intelligent"
+
+- Understand the structure of the table
+- Contain data from table rows
+- Know how to create, read, update, and delete rows
+- Add complex functionality
+- Can be manipulated as objects, then saved easily
+
+ActiveRecord Example
+
+```ruby
+user = User.new
+
+user.first_name = "Kevin"
+user.save # SQL INSERT
+
+user.last_name = "Skolung"
+user.save # SQL UPDATE
+
+user.destroy # SQL DELETE
+```
+
+ActiveRelation
+
+- Also known as "Arel"
+- Object-oriented interpretation of relational algebra
+- Simplifies the generation of complex database queries
+- Small queries are chainable
+- Complex joins and aggregations use efficient SQL
+- Queries do not execute until needed
+
+```ruby
+user = User.where(first_name: 'Kevin')
+users = users.order('last_name ASC').limit(5)
+
+users.each {|user| ... }
+
+##
+# SELECT users.* FROM users
+# WHERE users.first_name = 'Kevin'
+# ORDER BY users.last_name ASC
+# LIMIT 5
+```
+
 #### ActiveRecord and ActiveRelations
 
 #### Create records using ActiveRecord
