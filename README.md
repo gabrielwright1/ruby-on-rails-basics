@@ -310,7 +310,6 @@ Rails link with parameters:
         id: 20,
         page: 5
     }
-
 ) %>
 ```
 
@@ -327,6 +326,50 @@ params[:id]
 # or
 params['id']
 ```
+
+### Databases and Migrations
+
+#### Write migrations to define database changes
+
+#### User command line to generate migrations
+
+#### Run migrations to change the database schema
+
+### Models and ActiveRecord
+
+#### ActiveRecord and ActiveRelations
+
+#### Create records using ActiveRecord
+
+#### Update records using ActiveRecord
+
+#### Delete records using ActiveRecord
+
+#### Find records using ActiveRecord
+
+#### Define one-to-many associations between models
+
+### CRUD, REST, and Resourceful Routes
+
+#### Learn about CRUD (create, read, update, delete)
+
+#### Use REST for resourceful routes in a Rails project
+
+#### Use resourceful URL helpers
+
+### Controllers and CRUD
+
+#### Read actions: Index and show
+
+#### Create action: New
+
+#### Create action: Create
+
+#### Update actions: Edit and update
+
+#### Use partials to organize code
+
+#### Delete actions: Delete and destroy
 
 ---
 
