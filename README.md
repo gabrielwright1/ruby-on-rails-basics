@@ -304,12 +304,12 @@ Rails link with parameters:
 
 ```ruby
 <%= link_to('Link',
-{
-controller: 'main',
-action: 'hello',
-id: 20,
-page: 5
-}
+    {
+        controller: 'main',
+        action: 'hello',
+        id: 20,
+        page: 5
+    }
 
 ) %>
 ```
