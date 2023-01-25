@@ -536,6 +536,54 @@ users.each {|user| ... }
 3. Incorporating Assets
 4. Work Faster with Helpers
 
+## Notes
+
+### Useful Controller Features
+
+#### Store data in cookies
+
+#### Store data in sessions
+
+#### Messaging with the flash hash
+
+#### Log information to a file
+
+#### Inherit common behaviors with ApplicationController
+
+#### Use filters to call methods automatically
+
+### Rendering Views
+
+#### Avoid double render errors
+
+#### More options for rendering content
+
+#### Use layouts for shared templates
+
+#### Capture content for later use
+
+### Incorporating Assets
+
+#### Add stylesheets to view templates
+
+#### Use static images assets
+
+#### Use images as CSS backgrounds
+
+### Work Faster with Helpers
+
+#### Text helpers
+
+#### Sanitization helpers
+
+#### Number helpers
+
+#### Data and time helpers
+
+#### Form helpers
+
+#### Custom helpers
+
 ---
 
 # [Ruby on Rails Models and Associations](https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
@@ -546,6 +594,56 @@ users.each {|user| ... }
 2. Data Validations
 3. ActiveRecord Callbacks
 4. ActiveRecord Associations
+
+## Notes
+
+### Smarter Models
+
+#### Smart models by design
+
+#### More ActiveRecord query methods
+
+#### Select data from a query
+
+#### Named scopes
+
+#### Non-database attributes
+
+### Data Validations
+
+#### Overview of validation methods
+
+#### Write validations
+
+#### Use the multipurpose validates methods
+
+#### Write custom validations
+
+### ActiveRecord Callbacks
+
+#### Overview of callbacks
+
+#### Use callbacks to automate actions
+
+#### Execute callbacks conditionally
+
+### ActiveRecord Associations
+
+#### Overview of associations
+
+#### Create a one-to-many associations
+
+#### Use a one-to-many association
+
+#### Destroy dependent related records
+
+#### Has and belongs to many associations
+
+#### Rich join associations
+
+#### Traverse a rich join association
+
+#### Join tables during queries
 
 ---
 
@@ -559,3 +657,61 @@ users.each {|user| ... }
 4. Logging
 5. Interactive Debugging
 6. Fixing Common Errors and Researching
+
+## Notes
+
+### Backtraces
+
+#### Reading backtraces
+
+#### Unlocking full backtraces
+
+#### Challenge: Backtraces
+
+#### Solution: Backtraces
+
+### Debugging in Templates
+
+#### Debugging variables
+
+#### Debugging functions
+
+#### Debugging objects
+
+### Binary Searching
+
+#### Binary search your code
+
+#### Manual binary searching in tests
+
+#### Automatic binary searching in tests
+
+#### Binary searching in Git
+
+#### Automatic binary searching in Git
+
+### Logging
+
+#### Using logs
+
+#### Logging: Practical case in a test
+
+#### Logging: Practical case fixing N+1
+
+### Interactive Debugging
+
+#### Introduction to the debug gem
+
+#### Navigating the execution flow
+
+#### Adding breakpoints
+
+#### Integrating with Visual Studio Code
+
+#### Using the web-console gem
+
+### Fixing Common Errors and Researching
+
+#### Fixing the most common errors when using Ruby on Rails
+
+#### Researching on the internet
