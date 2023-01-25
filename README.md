@@ -301,6 +301,8 @@ HTML link with parameters:
 ```
 
 Rails link with parameters:
+
+```ruby
 <%= link_to('Link',
 {
 controller: 'main',
@@ -310,6 +312,7 @@ page: 5
 }
 
 ) %>
+```
 
 `params` method
 
