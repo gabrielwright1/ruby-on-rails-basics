@@ -427,6 +427,19 @@ rails generate model Task
 
 #### Run migrations to change the database schema
 
+```ruby
+# main command
+rails db:migrate
+
+# useful commands
+rails db:migration:status
+
+rails db:migrate VERSION=9
+
+rails db:migrate VERSION=20221231235959
+
+```
+
 ### Models and ActiveRecord
 
 #### ActiveRecord and ActiveRelations
