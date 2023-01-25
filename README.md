@@ -331,6 +331,28 @@ params['id']
 
 #### Write migrations to define database changes
 
+Managing Database Tables:
+
+- Can use legacy database tables
+- Can manually manage database tables
+- Can use Ruby on Rails migrations
+
+Migrations:
+
+- Set of database instructions
+- Writte in Ruby
+- "Migrate" the database from one state to another
+- Instructions for moving "up" to a new state
+- Instructions for moving "down" to the previous state
+
+Benefits of migrations:
+
+- Keep database schema with application code
+- Executable and repeatable
+- Allow sharing of schema changes
+- Allow writing Ruby instead of SQL
+- Able to access code in the Rails project
+
 #### User command line to generate migrations
 
 #### Run migrations to change the database schema
