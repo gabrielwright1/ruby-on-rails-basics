@@ -292,6 +292,39 @@ Link Targets:
 
 ```
 
+#### Defining and reading URL parameters
+
+HTML link with parameters:
+
+```html
+/main/hello?id=20&page=5
+```
+
+Rails link with parameters:
+<%= link_to('Link',
+{
+controller: 'main',
+action: 'hello',
+id: 20,
+page: 5
+}
+
+) %>
+
+`params` method
+
+- Accessible in controllers and views
+- Contains all GET and POST values
+- All values are strings ("1" != 1)
+
+Retrieve values from params:
+
+```ruby
+params[:id]
+# or
+params['id']
+```
+
 ---
 
 # [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
