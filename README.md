@@ -355,6 +355,76 @@ Benefits of migrations:
 
 #### User command line to generate migrations
 
+```ruby
+# command
+rails generate migration MigrationName
+
+# migration class created
+class CreateUsers < ActiveRecord::Migration
+
+    # default methods
+    def up
+        create_table(:users) do |t|
+            t.string :first_name
+            t.string :last_name
+            t.string :email
+        end
+    end
+
+    def down
+        drop_table(:users)
+    end
+
+    # shorthand method - performs the opposite of create when migrating down
+    def change
+        create_table(:users) do |t|
+            t.string :first_name
+            t.string :last_name
+            t.string :email
+        end
+    end
+```
+
+Migration methods:
+
+```ruby
+create_table
+
+drop_table
+
+rename_table
+
+add_column
+
+remove_column
+
+rename_column
+```
+
+Table column types:
+
+- string
+- integer
+- boolean
+- text
+- decimal
+- datetime
+- date
+- time
+- binary
+
+Generate a model:
+
+```ruby
+# command syntax
+rails generate model ModelName columns
+
+# command example
+rails generate model Task
+    name:string description:text
+    position:integer completed:boolean
+```
+
 #### Run migrations to change the database schema
 
 ### Models and ActiveRecord
