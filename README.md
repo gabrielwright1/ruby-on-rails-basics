@@ -647,6 +647,53 @@ category.tasks.empty? # returns true
 
 #### Learn about CRUD (create, read, update, delete)
 
+What is CRUD?
+
+- Create, Read, Update, Delete
+- Each action is a separate controllers
+- Often one controller per model; uses plural names
+
+For example:
+
+- TaskController
+- CategoryController
+
+Helpful commands for creating controller and actions:
+
+```ruby
+# commands
+rails g controller Categories index show new edit delete
+
+# output controllers
+class CategoriesController < ApplicationController
+
+    def index
+    end
+
+    def show
+    end
+
+    def new
+    end
+
+    def edit
+    end
+
+    def delete
+    end
+end
+
+# output routes
+Rails.application.routes.draw do
+    get 'categories/index'
+    get 'categories/show'
+    get 'categories/new'
+    get 'categories/edit'
+    get 'categories/delete'
+end
+
+```
+
 #### Use REST for resourceful routes in a Rails project
 
 #### Use resourceful URL helpers
