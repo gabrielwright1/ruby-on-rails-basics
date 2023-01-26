@@ -252,6 +252,7 @@ redirect_to('https://nytimes.com')
 ```
 
 ![Redirect Actions](https://user-images.githubusercontent.com/52660296/214371160-c3265380-6195-40d9-93bb-ce67cfbf7bd4.png)
+
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Define view templates using ERB
@@ -282,7 +283,8 @@ Regular vs. Instance variables:
 - A regular `variable` only has/us
      - Scoped within a particular actino
 - An `@instance_variable` has/is: - Scoped throughout the controller class and is available to all methods inside that class - Available to the template - A template can automatically access any instance variables you've set. - It makes it easy to pass data to your views.
-  [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
+
+[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create links to other web pages
 
@@ -373,7 +375,8 @@ Benefits of migrations:
 - Allow sharing of schema changes
 - Allow writing Ruby instead of SQL
 - Able to access code in the Rails project
-  [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
+
+[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### User command line to generate migrations
 
@@ -683,8 +686,6 @@ category.tasks.count # returns 0
 category.tasks.empty? # returns true
 ```
 
----
-
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ---
@@ -803,6 +804,7 @@ Resourceful URL helpers
 #### Read actions: Index and show
 
 ![Screen Shot 2023-01-26 at 2 58 46 PM](https://user-images.githubusercontent.com/52660296/214937963-706029a3-8059-4901-bc3e-a5de7a437942.png)
+
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create action: New
@@ -896,7 +898,8 @@ Update form processing:
 - Update the object using form parameters
 - If update succeeds, redirect to the show action
 - If update fails, redisplay the form so user can fix problems
-  [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
+
+[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use partials to organize code
 
@@ -905,7 +908,8 @@ Partials (similar to components in React.js)
 - Better code organization
 - Don't repeat yourself
 - Partials are partial templates
-  [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
+
+[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Delete actions: Delete and destroy
 
@@ -917,9 +921,9 @@ Is a Delete Form necessary?
 - Link to destroy with a confirmation alert
 - Link to a confirmation page
 
----
-
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
+
+---
 
 # [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
 
