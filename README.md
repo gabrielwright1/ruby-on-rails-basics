@@ -494,7 +494,8 @@ users.each {|user| ... }
 ```
 
 #### Use the Rails console to interact with a Rails project
-***Use Responsibly:***
+
+Important:
 - Rails console interacts with the regular project database
 - Changes can affect the data a browser would see
 - Important, especially with the production database
@@ -513,6 +514,16 @@ rails c -e testing
 ```
 
 #### Create records using ActiveRecord
+
+Create Records: `create` method
+- Same as new + save, but all in one step
+- Instantiate object, set values, and save
+
+```ruby
+# example
+task1 = Task.create(name: 'Sweep the porch', position: 2, completed: false)
+```
+
 
 #### Update records using ActiveRecord
 
