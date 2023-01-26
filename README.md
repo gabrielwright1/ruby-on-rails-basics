@@ -733,8 +733,16 @@ Resourceful URL helpers
 # shorthand
 task_path(5)
 ```
+
 ![Screen Shot 2023-01-26 at 2 51 45 PM](https://user-images.githubusercontent.com/52660296/214936537-aed564cd-d944-46b3-9c65-63d5a1028192.png)
 
+Resourceful URL helpers
+
+```ruby
+<%= link_to('All Tasks', tasks_path)%>
+<%= link_to('Show Tasks', tasks_path(@task.id))%>
+<%= link_to('Edit Tasks', edit_task_path(@task))%>
+```
 
 ### Controllers and CRUD
 
