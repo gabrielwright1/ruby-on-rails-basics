@@ -71,7 +71,6 @@
 - View is displayed on the webpage in the browser
 
 ![MVC architecture](https://user-images.githubusercontent.com/52660296/213944784-a2a2c316-48e0-4ce5-b450-2287350e6ea4.PNG)
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Creating a new project
 
@@ -85,7 +84,6 @@ rails new --help
 cd project_name
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Configure project
 
@@ -112,7 +110,6 @@ GRANT ALL PRIVILEGES ON db_name.*
 TO 'username'@'localhost';
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Access Rails project from browser
 
@@ -136,7 +133,6 @@ http://localhost:3000
 CTRL + C
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Generate a Controller and View
 
@@ -173,7 +169,6 @@ or
 http://localhost:3000/main/index
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Define Routes (manually)
 
@@ -237,7 +232,6 @@ render('main/about')
 render('about') # shorthand
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Redirect controller actions:
 
@@ -253,7 +247,6 @@ redirect_to('https://nytimes.com')
 
 ![Redirect Actions](https://user-images.githubusercontent.com/52660296/214371160-c3265380-6195-40d9-93bb-ce67cfbf7bd4.png)
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Define view templates using ERB
 
@@ -274,8 +267,6 @@ Template File Naming Convention:
 about.html.erb
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
-
 #### Instance variables to set values in a template
 
 Regular vs. Instance variables:
@@ -284,7 +275,6 @@ Regular vs. Instance variables:
      - Scoped within a particular actino
 - An `@instance_variable` has/is: - Scoped throughout the controller class and is available to all methods inside that class - Available to the template - A template can automatically access any instance variables you've set. - It makes it easy to pass data to your views.
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create links to other web pages
 
@@ -309,7 +299,6 @@ Link Targets:
 
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Defining and reading URL parameters
 
@@ -346,7 +335,6 @@ params[:id]
 params['id']
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ---
 
@@ -376,7 +364,6 @@ Benefits of migrations:
 - Allow writing Ruby instead of SQL
 - Able to access code in the Rails project
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### User command line to generate migrations
 
@@ -450,7 +437,6 @@ rails generate model Task
     position:integer completed:boolean
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Run migrations to change the database schema
 
@@ -524,7 +510,6 @@ users.each {|user| ... }
 # LIMIT 5
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use the Rails console to interact with a Rails project
 
@@ -547,7 +532,6 @@ rails c -e testing
 
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create records using ActiveRecord
 
@@ -561,7 +545,6 @@ Create Records: `create` method
 task1 = Task.create(name: 'Sweep the porch', position: 2, completed: false)
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Update records using ActiveRecord
 
@@ -582,7 +565,6 @@ task1.find(1) # where id = 1
 task1.update(name:'Sweep porch', description: 'Sweep dirt off the porch')
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Delete records using ActiveRecord
 
@@ -595,7 +577,6 @@ Delete Records: `find` and `destroy` methods
 task1.destroy # no brackets needed
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Find records using ActiveRecord
 
@@ -625,7 +606,6 @@ Task.where(completed:true).order(:position).limit(5).offset(10)
 task1 = Task.find_by(['name LIKE ?', '%porch%'])
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Define one-to-many associations between models
 
@@ -743,7 +723,6 @@ end
 
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use REST for resourceful routes in a Rails project
 
@@ -772,7 +751,6 @@ end
 
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use resourceful URL helpers
 
@@ -805,7 +783,6 @@ Resourceful URL helpers
 
 ![Screen Shot 2023-01-26 at 2 58 46 PM](https://user-images.githubusercontent.com/52660296/214937963-706029a3-8059-4901-bc3e-a5de7a437942.png)
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create action: New
 
@@ -862,7 +839,6 @@ class TasksController < ApplicationController
 end
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create action: Create
 
@@ -888,7 +864,6 @@ params.require(:task) # returns obj, similar to params[:task]
 params.require(:task).permit(:name, :position, :completed) # prevents extra fields
 ```
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Update actions: Edit and update
 
@@ -899,7 +874,6 @@ Update form processing:
 - If update succeeds, redirect to the show action
 - If update fails, redisplay the form so user can fix problems
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use partials to organize code
 
@@ -909,7 +883,6 @@ Partials (similar to components in React.js)
 - Don't repeat yourself
 - Partials are partial templates
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Delete actions: Delete and destroy
 
@@ -940,23 +913,18 @@ Is a Delete Form necessary?
 
 #### Store data in cookies
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Store data in sessions
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Messaging with the flash hash
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Log information to a file
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Inherit common behaviors with ApplicationController
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use filters to call methods automatically
 
@@ -966,15 +934,12 @@ Is a Delete Form necessary?
 
 #### Avoid double render errors
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### More options for rendering content
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use layouts for shared templates
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Capture content for later use
 
@@ -984,11 +949,9 @@ Is a Delete Form necessary?
 
 #### Add stylesheets to view templates
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use static images assets
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use images as CSS backgrounds
 
@@ -998,23 +961,18 @@ Is a Delete Form necessary?
 
 #### Text helpers
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Sanitization helpers
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Number helpers
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Data and time helpers
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Form helpers
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Custom helpers
 
@@ -1035,23 +993,18 @@ Is a Delete Form necessary?
 
 ### Smarter Models
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Smart models by design
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### More ActiveRecord query methods
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Select data from a query
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Named scopes
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Non-database attributes
 
@@ -1059,19 +1012,15 @@ Is a Delete Form necessary?
 
 ### Data Validations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Overview of validation methods
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Write validations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use the multipurpose validates methods
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Write custom validations
 
@@ -1079,15 +1028,12 @@ Is a Delete Form necessary?
 
 ### ActiveRecord Callbacks
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Overview of callbacks
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use callbacks to automate actions
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Execute callbacks conditionally
 
@@ -1095,35 +1041,27 @@ Is a Delete Form necessary?
 
 ### ActiveRecord Associations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Overview of associations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Create a one-to-many associations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Use a one-to-many association
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Destroy dependent related records
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Has and belongs to many associations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Rich join associations
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Traverse a rich join association
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Join tables during queries
 
@@ -1148,15 +1086,12 @@ Is a Delete Form necessary?
 
 #### Reading backtraces
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Unlocking full backtraces
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Challenge: Backtraces
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Solution: Backtraces
 
@@ -1164,15 +1099,12 @@ Is a Delete Form necessary?
 
 ### Debugging in Templates
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Debugging variables
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Debugging functions
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Debugging objects
 
@@ -1182,19 +1114,15 @@ Is a Delete Form necessary?
 
 #### Binary search your code
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Manual binary searching in tests
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Automatic binary searching in tests
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Binary searching in Git
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Automatic binary searching in Git
 
@@ -1206,11 +1134,9 @@ Is a Delete Form necessary?
 
 #### Using logs
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Logging: Practical case in a test
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Logging: Practical case fixing N+1
 
@@ -1218,23 +1144,18 @@ Is a Delete Form necessary?
 
 ### Interactive Debugging
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Introduction to the debug gem
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Navigating the execution flow
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Adding breakpoints
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Integrating with Visual Studio Code
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Using the web-console gem
 
@@ -1246,7 +1167,6 @@ Is a Delete Form necessary?
 
 #### Fixing the most common errors when using Ruby on Rails
 
-[Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 #### Researching on the internet
 
