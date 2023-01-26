@@ -653,6 +653,8 @@ What is CRUD?
 - Each action is a separate controllers
 - Often one controller per model; uses plural names
 
+![Screen Shot 2023-01-26 at 2 04 48 PM](https://user-images.githubusercontent.com/52660296/214930246-707a1230-22dd-46c1-ae5e-3ae6fa89178e.png)
+
 For example:
 
 - TaskController
