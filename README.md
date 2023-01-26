@@ -751,7 +751,9 @@ Resourceful URL helpers
 ![Screen Shot 2023-01-26 at 2 58 46 PM](https://user-images.githubusercontent.com/52660296/214937963-706029a3-8059-4901-bc3e-a5de7a437942.png)
 
 #### Create action: New
+
 HTML Form:
+
 ```ruby
 params[:name]
 params[:position]
@@ -760,6 +762,7 @@ params[:description]
 ```
 
 Rails Helper: `form_for`
+
 - Form parameters are grouped
 - Form inputs are easier and more consistent
 - Fields are pre-populated with object attributes
@@ -776,6 +779,7 @@ Rails Helper: `form_for`
 ```
 
 Accessing params:
+
 ```ruby
 # accessing entire object
 params[:task] # returns {name: 'clean room', position: '5', ...}
@@ -786,7 +790,9 @@ params[:task][:position]
 params[:task][:completed]
 params[:task][:description]
 ```
+
 Example:
+
 ```ruby
 class TasksController < ApplicationController
      def index
@@ -799,8 +805,29 @@ class TasksController < ApplicationController
 end
 ```
 
-
 #### Create action: Create
+
+Create Form Processing
+
+- Instantiate a new object using form parameters
+- Save the object
+- If save succeeds, redirect to the index action
+- If save fails, redisplay the form so user can fix problems
+
+Mass Assignment:
+
+```ruby
+Task.new(params[:task])
+Task.create(params[:task])
+@task.update(params[:task])
+```
+
+Strong Parameters (prevent's hackers)
+
+```ruby
+params.require(:task) #returns hash, similar to params[:task]
+params.require(:task).permit(:name, :position, :completed) # prevents extra fields from being accepted by server
+```
 
 #### Update actions: Edit and update
 
