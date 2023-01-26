@@ -725,6 +725,15 @@ end
 
 #### Use resourceful URL helpers
 
+Resourceful URL helpers
+
+```ruby
+{controller: 'tasks', action: 'show', id: 5}
+
+# shorthand
+task_path(5)
+```
+
 ### Controllers and CRUD
 
 #### Read actions: Index and show
