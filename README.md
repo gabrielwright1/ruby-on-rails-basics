@@ -733,6 +733,8 @@ Resourceful URL helpers
 # shorthand
 task_path(5)
 ```
+![Screen Shot 2023-01-26 at 2 51 45 PM](https://user-images.githubusercontent.com/52660296/214936537-aed564cd-d944-46b3-9c65-63d5a1028192.png)
+
 
 ### Controllers and CRUD
 
