@@ -442,6 +442,8 @@ rails db:migrate VERSION=20221231235959
 
 ### Models and ActiveRecord
 
+#### ActiveRecord and ActiveRelations
+
 ActiveRecord
 
 - Design pattern for relational databases
@@ -491,7 +493,24 @@ users.each {|user| ... }
 # LIMIT 5
 ```
 
-#### ActiveRecord and ActiveRelations
+#### Use the Rails console to interact with a Rails project
+***Use Responsibly:***
+- Rails console interacts with the regular project database
+- Changes can affect the data a browser would see
+- Important, especially with the production database
+
+```ruby
+# commands
+rails console -e development
+rails console -e production
+rails console -e testing
+
+# shorthand
+rails c -e development 
+rails c -e production
+rails c -e testing 
+
+```
 
 #### Create records using ActiveRecord
 
