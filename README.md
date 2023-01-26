@@ -932,8 +932,6 @@ Is a Delete Form necessary?
 
 ## Notes
 
----
-
 ### Useful Controller Features
 
 #### Store data in cookies
@@ -1030,8 +1028,6 @@ Is a Delete Form necessary?
 4. ActiveRecord Associations
 
 ## Notes
-
----
 
 ### Smarter Models
 
