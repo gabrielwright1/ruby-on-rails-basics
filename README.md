@@ -825,11 +825,18 @@ Task.create(params[:task])
 Strong Parameters (prevent's hackers)
 
 ```ruby
-params.require(:task) #returns hash, similar to params[:task]
-params.require(:task).permit(:name, :position, :completed) # prevents extra fields from being accepted by server
+params.require(:task) # returns obj, similar to params[:task]
+params.require(:task).permit(:name, :position, :completed) # prevents extra fields
 ```
 
 #### Update actions: Edit and update
+
+Update form processing:
+
+- Find a existing object using its ID
+- Update the object using form parameters
+- If update succeeds, redirect to the show action
+- If update fails, redisplay the form so user can fix problems
 
 #### Use partials to organize code
 
