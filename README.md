@@ -561,7 +561,7 @@ task1.destroy # no brackets needed
 Primary Key Finder: `find`
 
 ```ruby
-Task.find(1) # looks for id, returns either an object or and error
+Task.find(1) # looks for id, returns either an object or error
 ```
 
 Conditions:
@@ -608,10 +608,10 @@ Associations:
 # For example, 'category' -> 'tasks' which is one-to-many
 
 # run command
-rails g model Category name:string
-rails g migration AddCategoryIdToTasks
+rails g model Category name:string # creates a model for 'category'
+rails g migration AddCategoryIdToTasks # creates a migration file
 
-# add ColumnId to task
+# add foreign key (column id) to Task table
 class AddCategoryIdToTasks < ActiveRecord::Migration(7.0)
     def change
         add_column(:tasks, :category_id, :integer, index: true)
@@ -631,17 +631,16 @@ class Category < ApplicationRecord
     has_many :tasks
 end
 
-# run console, add a category,
+# open console and create an example
 rails console -e development
-
 category = Category.create(name: 'weekly')
 category.tasks # returns []
-task1 = Task.find(1)
-task2 = Task.find(2)
+task1 = Task.find(1) # id = 1
 category.tasks << task1 # appends task1 to the task list, returns task list
-category.tasks << task2 # appends task2 to the task list, returns task list
+category.tasks.count # returns 1
 category.tasks.delete(task2) # 'delete' removes the relationship
-
+category.tasks.count # returns 0
+category.tasks.empty? # returns true
 ```
 
 ### CRUD, REST, and Resourceful Routes
