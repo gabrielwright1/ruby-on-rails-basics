@@ -657,7 +657,7 @@ What is CRUD?
 
 For example:
 
-- TaskController
+- TasksController
 - CategoryController
 
 Helpful commands for creating controller and actions:
@@ -748,7 +748,57 @@ Resourceful URL helpers
 
 #### Read actions: Index and show
 
+![Screen Shot 2023-01-26 at 2 58 46 PM](https://user-images.githubusercontent.com/52660296/214937963-706029a3-8059-4901-bc3e-a5de7a437942.png)
+
 #### Create action: New
+HTML Form:
+```ruby
+params[:name]
+params[:position]
+params[:completed]
+params[:description]
+```
+
+Rails Helper: `form_for`
+- Form parameters are grouped
+- Form inputs are easier and more consistent
+- Fields are pre-populated with object attributes
+- Form action/method checks object.new_record?
+
+```ruby
+<% form_for(@task) do |f| %>
+     <% f.text_field(:name) %>
+     <% f.text_field(:position) %>
+     <% f.check_box(:completed) %>
+     <% f.text_area(:description) %>
+     <% f.submit('Create Task') %>
+<% end %>
+```
+
+Accessing params:
+```ruby
+# accessing entire object
+params[:task] # returns {name: 'clean room', position: '5', ...}
+
+# accessing individual properties
+params[:task][:name]
+params[:task][:position]
+params[:task][:completed]
+params[:task][:description]
+```
+Example:
+```ruby
+class TasksController < ApplicationController
+     def index
+          @tasks = Task.order(:position)
+     end
+
+     def show
+          @task = Task.find(params[:id]
+     end
+end
+```
+
 
 #### Create action: Create
 
