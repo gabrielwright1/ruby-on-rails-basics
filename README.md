@@ -702,15 +702,16 @@ What is REST?
 
 - Representational state transfer
 - Instead of performing procedures, perform state transformations on resources
-![Screen Shot 2023-01-26 at 2 25 43 PM](https://user-images.githubusercontent.com/52660296/214932431-a8d86804-ec58-47b5-8f06-6cf9a7895a64.png)
-![Screen Shot 2023-01-26 at 2 26 13 PM](https://user-images.githubusercontent.com/52660296/214932429-0bcf93b1-8245-4c33-8c42-0835797a7916.png)
 
+![Screen Shot 2023-01-26 at 2 26 13 PM](https://user-images.githubusercontent.com/52660296/214932429-0bcf93b1-8245-4c33-8c42-0835797a7916.png)
 
 Add resourceful routes:
 
-```ruby
-# config/routes.rb
+- Delete action is not added by default, we can add it manually using a `member` block
+- If an action operates on the resource as a whole, and doesn't send an ID, use a `collection`
 
+```ruby
+# For example, config/routes.rb
 resources :tasks do
     member do
         get :delete
