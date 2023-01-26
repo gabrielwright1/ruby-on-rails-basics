@@ -698,6 +698,27 @@ end
 
 #### Use REST for resourceful routes in a Rails project
 
+What is REST?
+
+- Representational state transfer
+- Instead of performing procedures, perform state transformations on resources
+
+Add resourceful routes:
+
+```ruby
+# config/routes.rb
+
+resources :tasks do
+    member do
+        get :delete
+    end
+    collection do
+        get :export
+    end
+end
+
+```
+
 #### Use resourceful URL helpers
 
 ### Controllers and CRUD
