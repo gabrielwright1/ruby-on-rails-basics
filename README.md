@@ -586,6 +586,64 @@ task1 = Task.find_by(['name LIKE ?', '%porch%'])
 
 #### Define one-to-many associations between models
 
+Relational Database Associations
+
+- One-to-one
+- One-to-many
+- Many-to-many
+
+One-to-Many Association:
+
+- Teacher 'has many' courses
+- Course 'belongs to' a teacher
+- Foreign key on courses table
+
+Associations:
+
+- Create relationship in database
+- Define relationship in models, both sides
+- Use relationship
+
+```ruby
+# For example, 'category' -> 'tasks' which is one-to-many
+
+# run command
+rails g model Category name:string
+rails g migration AddCategoryIdToTasks
+
+# add ColumnId to task
+class AddCategoryIdToTasks < ActiveRecord::Migration(7.0)
+    def change
+        add_column(:tasks, :category_id, :integer, index: true)
+    end
+end
+
+# make database changes
+rails db:migrate
+
+# link the task to the category
+class Task < ApplicationRecord
+    belongs_to :category, optional: true
+end
+
+# link the category to the task
+class Category < ApplicationRecord
+    has_many :tasks
+end
+
+# run console, add a category,
+rails console -e development
+
+category = Category.create(name: 'weekly')
+category.tasks # returns []
+task1 = Task.find(1)
+task2 = Task.find(2)
+category.tasks << task1 # appends task1 to the task list, returns task list
+category.tasks << task2 # appends task2 to the task list, returns task list
+category.tasks.delete(task2) # 'delete' removes the relationship
+
+```
+
 ### CRUD, REST, and Resourceful Routes
 
 #### Learn about CRUD (create, read, update, delete)
