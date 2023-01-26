@@ -496,6 +496,7 @@ users.each {|user| ... }
 #### Use the Rails console to interact with a Rails project
 
 Important:
+
 - Rails console interacts with the regular project database
 - Changes can affect the data a browser would see
 - Important, especially with the production database
@@ -507,15 +508,16 @@ rails console -e production
 rails console -e testing
 
 # shorthand
-rails c -e development 
+rails c -e development
 rails c -e production
-rails c -e testing 
+rails c -e testing
 
 ```
 
 #### Create records using ActiveRecord
 
 Create Records: `create` method
+
 - Same as new + save, but all in one step
 - Instantiate object, set values, and save
 
@@ -527,11 +529,32 @@ task1 = Task.create(name: 'Sweep the porch', position: 2, completed: false)
 #### Update records using ActiveRecord
 
 Update Records: `find` and `save` methods
+
 - Find record
 - Set values
 - Save changes
 
+Update Records: `find` and `update` methods
+
+- Find record
+- Set values and save
+
+```ruby
+# example
+task1.find(1) # where id = 1
+task1.update(name:'Sweep porch', description: 'Sweep dirt off the porch')
+```
+
 #### Delete records using ActiveRecord
+
+Delete Records: `find` and `destroy` methods
+
+- Find record
+- Destroys the element in the SQL database (this is not the same thing as the `delete` method)
+
+```ruby
+task1.destroy # no brackets needed
+```
 
 #### Find records using ActiveRecord
 
