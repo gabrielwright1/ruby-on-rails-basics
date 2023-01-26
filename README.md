@@ -840,7 +840,21 @@ Update form processing:
 
 #### Use partials to organize code
 
+Partials (similar to components in React.js)
+
+- Better code organization
+- Don't repeat yourself
+- Partials are partial templates
+
 #### Delete actions: Delete and destroy
+
+Is a Delete Form necessary?
+
+- Not a default action
+- Often omitted
+- Link to destroy
+- Link to destroy with a confirmation alert
+- Link to a confirmation page
 
 ---
 
