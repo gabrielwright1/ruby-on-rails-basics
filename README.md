@@ -524,8 +524,12 @@ Create Records: `create` method
 task1 = Task.create(name: 'Sweep the porch', position: 2, completed: false)
 ```
 
-
 #### Update records using ActiveRecord
+
+Update Records: `find` and `save` methods
+- Find record
+- Set values
+- Save changes
 
 #### Delete records using ActiveRecord
 
