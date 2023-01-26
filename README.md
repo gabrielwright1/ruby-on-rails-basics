@@ -558,6 +558,32 @@ task1.destroy # no brackets needed
 
 #### Find records using ActiveRecord
 
+Primary Key Finder: `find`
+
+```ruby
+Task.find(1) # looks for id, returns either an object or and error
+```
+
+Conditions:
+
+```ruby
+Task.where(completed:false)
+Task.where('completed = 0 AND position < 10')
+User.where(['first_name LIKE ?', @query])
+```
+
+Order, Limit, Offset
+
+```ruby
+Task.order('position ASC')
+Task.limit(20)
+Task.offset(100)
+Task.where(completed:true).order(:position).limit(5).offset(10)
+
+#alternative
+task1 = Task.find_by(['name LIKE ?', '%porch%'])
+```
+
 #### Define one-to-many associations between models
 
 ### CRUD, REST, and Resourceful Routes
