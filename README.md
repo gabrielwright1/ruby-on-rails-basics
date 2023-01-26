@@ -9,30 +9,30 @@
 
 ## Overview of topics:
 
-1. Getting Started
-2. Controllers, Views, and Dynamic Content
-3. Databases and Migrations
-4. Models and ActiveRecord
-5. CRUD, REST, and Resourceful Routes
-6. Controllers and CRUD
-7. Useful Controller Features
-8. Rendering Views
-9. Incorporating Assets
-10. Work Faster with Helpers
-11. Smarter Models
-12. Data Validations
-13. ActiveRecord Callbacks
-14. ActiveRecord Associations
-15. Backtraces
-16. Debugging in Templates
-17. Binary Searching
-18. Logging
-19. Interactive Debugging
-20. Fixing Common Errors and Researching
+1. [Getting Started](https://github.com/gabrielwright1/ruby-on-rails-basics#getting-started)
+2. [Controllers, Views, and Dynamic Content](https://github.com/gabrielwright1/ruby-on-rails-basics#controllers-views-and-dynamic-content)
+3. [Databases and Migrations](https://github.com/gabrielwright1/ruby-on-rails-basics#databases-and-migrations)
+4. [Models and ActiveRecord](https://github.com/gabrielwright1/ruby-on-rails-basics#models-and-activerecord)
+5. [CRUD, REST, and Resourceful Routes](https://github.com/gabrielwright1/ruby-on-rails-basics#crud-rest-and-resourceful-routes)
+6. [Controllers and CRUD](https://github.com/gabrielwright1/ruby-on-rails-basics#controllers-and-crud)
+7. [Useful Controller Features](https://github.com/gabrielwright1/ruby-on-rails-basics#useful-controller-features)
+8. [Rendering Views](https://github.com/gabrielwright1/ruby-on-rails-basics#rendering-views)
+9. [Incorporating Assets](https://github.com/gabrielwright1/ruby-on-rails-basics#incorporating-assets)
+10. [Work Faster with Helpers](https://github.com/gabrielwright1/ruby-on-rails-basics#work-faster-with-helpers)
+11. [Smarter Models](https://github.com/gabrielwright1/ruby-on-rails-basics#smarter-models)
+12. [Data Validations](https://github.com/gabrielwright1/ruby-on-rails-basics#data-validations)
+13. [ActiveRecord Callbacks](https://github.com/gabrielwright1/ruby-on-rails-basics#activerecord-callbacks)
+14. [ActiveRecord Associations](https://github.com/gabrielwright1/ruby-on-rails-basics#activerecord-associations)
+15. [Backtraces](https://github.com/gabrielwright1/ruby-on-rails-basics#backtraces)
+16. [Debugging in Templates](https://github.com/gabrielwright1/ruby-on-rails-basics#debugging-in-templates)
+17. [Binary Searching](https://github.com/gabrielwright1/ruby-on-rails-basics#binary-searching)
+18. [Logging](https://github.com/gabrielwright1/ruby-on-rails-basics#logging)
+19. [Interactive Debugging](https://github.com/gabrielwright1/ruby-on-rails-basics#interactive-debugging)
+20. [Fixing Common Errors and Researching](https://github.com/gabrielwright1/ruby-on-rails-basics#fixing-common-errors-and-researching)
 
 ---
 
-# [Ruby on Rails 7 Essential Training:](https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
+# [Ruby on Rails 7 Essential Training:](https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ## Sections:
 
@@ -858,7 +858,7 @@ Is a Delete Form necessary?
 
 ---
 
-# [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
+# [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ## Sections:
 
@@ -917,7 +917,7 @@ Is a Delete Form necessary?
 
 ---
 
-# [Ruby on Rails Models and Associations](https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
+# [Ruby on Rails Models and Associations](https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ## Sections:
 
@@ -978,7 +978,7 @@ Is a Delete Form necessary?
 
 ---
 
-# [Ruby on Rails: Debugging](https://www.linkedin.com/learning/ruby-on-rails-debugging?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
+# [Ruby on Rails: Debugging](https://www.linkedin.com/learning/ruby-on-rails-debugging?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ## Sections:
 
