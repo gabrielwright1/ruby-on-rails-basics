@@ -30,6 +30,10 @@
 19. [Interactive Debugging](https://github.com/gabrielwright1/ruby-on-rails-basics#interactive-debugging)
 20. [Fixing Common Errors and Researching](https://github.com/gabrielwright1/ruby-on-rails-basics#fixing-common-errors-and-researching)
 
+## Helpful Resources:
+
+- [Cheatsheet](https://gist.github.com/mdang/95b4f54cadf12e7e0415)
+
 ---
 
 # [Ruby on Rails 7 Essential Training:](https://www.linkedin.com/learning/ruby-on-rails-7-essential-training?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980)
