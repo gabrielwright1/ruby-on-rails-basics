@@ -88,7 +88,6 @@ rails new --help
 cd project_name
 ```
 
-
 #### Configure project
 
 1. a) Configure the database (assuming you have a user with db create privileges):
@@ -114,7 +113,6 @@ GRANT ALL PRIVILEGES ON db_name.*
 TO 'username'@'localhost';
 ```
 
-
 #### Access Rails project from browser
 
 1. Start Web Server (called Puma) - in development
@@ -136,7 +134,6 @@ http://localhost:3000
 ```
 CTRL + C
 ```
-
 
 #### Generate a Controller and View
 
@@ -172,7 +169,6 @@ or
 
 http://localhost:3000/main/index
 ```
-
 
 #### Define Routes (manually)
 
@@ -236,7 +232,6 @@ render('main/about')
 render('about') # shorthand
 ```
 
-
 #### Redirect controller actions:
 
 Rails Redirect
@@ -250,7 +245,6 @@ redirect_to('https://nytimes.com')
 ```
 
 ![Redirect Actions](https://user-images.githubusercontent.com/52660296/214371160-c3265380-6195-40d9-93bb-ce67cfbf7bd4.png)
-
 
 #### Define view templates using ERB
 
@@ -279,7 +273,6 @@ Regular vs. Instance variables:
      - Scoped within a particular actino
 - An `@instance_variable` has/is: - Scoped throughout the controller class and is available to all methods inside that class - Available to the template - A template can automatically access any instance variables you've set. - It makes it easy to pass data to your views.
 
-
 #### Create links to other web pages
 
 HTML Links:
@@ -302,7 +295,6 @@ Link Targets:
 {controller: 'main', action: 'index'}
 
 ```
-
 
 #### Defining and reading URL parameters
 
@@ -339,7 +331,6 @@ params[:id]
 params['id']
 ```
 
-
 ---
 
 ### Databases and Migrations
@@ -367,7 +358,6 @@ Benefits of migrations:
 - Allow sharing of schema changes
 - Allow writing Ruby instead of SQL
 - Able to access code in the Rails project
-
 
 #### User command line to generate migrations
 
@@ -441,7 +431,6 @@ rails generate model Task
     position:integer completed:boolean
 ```
 
-
 #### Run migrations to change the database schema
 
 ```ruby
@@ -514,7 +503,6 @@ users.each {|user| ... }
 # LIMIT 5
 ```
 
-
 #### Use the Rails console to interact with a Rails project
 
 Important:
@@ -536,7 +524,6 @@ rails c -e testing
 
 ```
 
-
 #### Create records using ActiveRecord
 
 Create Records: `create` method
@@ -548,7 +535,6 @@ Create Records: `create` method
 # example
 task1 = Task.create(name: 'Sweep the porch', position: 2, completed: false)
 ```
-
 
 #### Update records using ActiveRecord
 
@@ -569,7 +555,6 @@ task1.find(1) # where id = 1
 task1.update(name:'Sweep porch', description: 'Sweep dirt off the porch')
 ```
 
-
 #### Delete records using ActiveRecord
 
 Delete Records: `find` and `destroy` methods
@@ -580,7 +565,6 @@ Delete Records: `find` and `destroy` methods
 ```ruby
 task1.destroy # no brackets needed
 ```
-
 
 #### Find records using ActiveRecord
 
@@ -609,7 +593,6 @@ Task.where(completed:true).order(:position).limit(5).offset(10)
 #alternative
 task1 = Task.find_by(['name LIKE ?', '%porch%'])
 ```
-
 
 #### Define one-to-many associations between models
 
@@ -727,7 +710,6 @@ end
 
 ```
 
-
 #### Use REST for resourceful routes in a Rails project
 
 What is REST?
@@ -754,7 +736,6 @@ resources :tasks do
 end
 
 ```
-
 
 #### Use resourceful URL helpers
 
@@ -786,7 +767,6 @@ Resourceful URL helpers
 #### Read actions: Index and show
 
 ![Screen Shot 2023-01-26 at 2 58 46 PM](https://user-images.githubusercontent.com/52660296/214937963-706029a3-8059-4901-bc3e-a5de7a437942.png)
-
 
 #### Create action: New
 
@@ -843,7 +823,6 @@ class TasksController < ApplicationController
 end
 ```
 
-
 #### Create action: Create
 
 Create Form Processing
@@ -868,7 +847,6 @@ params.require(:task) # returns obj, similar to params[:task]
 params.require(:task).permit(:name, :position, :completed) # prevents extra fields
 ```
 
-
 #### Update actions: Edit and update
 
 Update form processing:
@@ -878,7 +856,6 @@ Update form processing:
 - If update succeeds, redirect to the show action
 - If update fails, redisplay the form so user can fix problems
 
-
 #### Use partials to organize code
 
 Partials (similar to components in React.js)
@@ -886,7 +863,6 @@ Partials (similar to components in React.js)
 - Better code organization
 - Don't repeat yourself
 - Partials are partial templates
-
 
 #### Delete actions: Delete and destroy
 
@@ -917,18 +893,13 @@ Is a Delete Form necessary?
 
 #### Store data in cookies
 
-
 #### Store data in sessions
-
 
 #### Messaging with the flash hash
 
-
 #### Log information to a file
 
-
 #### Inherit common behaviors with ApplicationController
-
 
 #### Use filters to call methods automatically
 
@@ -938,12 +909,9 @@ Is a Delete Form necessary?
 
 #### Avoid double render errors
 
-
 #### More options for rendering content
 
-
 #### Use layouts for shared templates
-
 
 #### Capture content for later use
 
@@ -953,9 +921,7 @@ Is a Delete Form necessary?
 
 #### Add stylesheets to view templates
 
-
 #### Use static images assets
-
 
 #### Use images as CSS backgrounds
 
@@ -965,18 +931,13 @@ Is a Delete Form necessary?
 
 #### Text helpers
 
-
 #### Sanitization helpers
-
 
 #### Number helpers
 
-
 #### Data and time helpers
 
-
 #### Form helpers
-
 
 #### Custom helpers
 
@@ -997,18 +958,58 @@ Is a Delete Form necessary?
 
 ### Smarter Models
 
+Smart Models by Design:
+
+- "Fat model, skinny controller"
+- Move most business logic to models
+- Define instance methods for things an instance of a class should "know"
+- Models can leverage attributes and associations
+
+Benefits of Smarter Models:
+
+- Don't Repeat Yourself (DRY)
+- Code is easier to maintain with fewer bugs
+- Model methods can be called from anywhere in the app
+- Model methods can be exercised from the Rails console
+- Model methods are easier to test
+
+Respect MVC Architecture
+
+- Code for decisions based on user actions belongs in Controllers
+- Code for the presentation of data belongs in the Views
+- Code for formatting data for Views belongs in Helpers
+- Not HTML, CSS, XML, JSON, JavaScript
+
+```ruby
+# Example:
+class User < ApplicationRecord
+    def full_name
+        [first_name, last_name].join(' ')
+    end
+
+    def last_name_first
+        [last_name, first_name].join(', ')
+    end
+
+    def abbrev_name
+        first_initial = first_name.chars.first + ". "
+        [first_initial, last_name].join(' ')
+    end
+end
+
+# we can now type into rails console:
+user.full_name # Kevin Skoglund
+user.last_name_first # Skoglund Kevin
+user.abbrev_name # K. Skoglund
+```
 
 #### Smart models by design
 
-
 #### More ActiveRecord query methods
-
 
 #### Select data from a query
 
-
 #### Named scopes
-
 
 #### Non-database attributes
 
@@ -1016,15 +1017,11 @@ Is a Delete Form necessary?
 
 ### Data Validations
 
-
 #### Overview of validation methods
-
 
 #### Write validations
 
-
 #### Use the multipurpose validates methods
-
 
 #### Write custom validations
 
@@ -1032,12 +1029,9 @@ Is a Delete Form necessary?
 
 ### ActiveRecord Callbacks
 
-
 #### Overview of callbacks
 
-
 #### Use callbacks to automate actions
-
 
 #### Execute callbacks conditionally
 
@@ -1045,27 +1039,19 @@ Is a Delete Form necessary?
 
 ### ActiveRecord Associations
 
-
 #### Overview of associations
-
 
 #### Create a one-to-many associations
 
-
 #### Use a one-to-many association
-
 
 #### Destroy dependent related records
 
-
 #### Has and belongs to many associations
-
 
 #### Rich join associations
 
-
 #### Traverse a rich join association
-
 
 #### Join tables during queries
 
@@ -1090,12 +1076,9 @@ Is a Delete Form necessary?
 
 #### Reading backtraces
 
-
 #### Unlocking full backtraces
 
-
 #### Challenge: Backtraces
-
 
 #### Solution: Backtraces
 
@@ -1103,12 +1086,9 @@ Is a Delete Form necessary?
 
 ### Debugging in Templates
 
-
 #### Debugging variables
 
-
 #### Debugging functions
-
 
 #### Debugging objects
 
@@ -1118,15 +1098,11 @@ Is a Delete Form necessary?
 
 #### Binary search your code
 
-
 #### Manual binary searching in tests
-
 
 #### Automatic binary searching in tests
 
-
 #### Binary searching in Git
-
 
 #### Automatic binary searching in Git
 
@@ -1138,9 +1114,7 @@ Is a Delete Form necessary?
 
 #### Using logs
 
-
 #### Logging: Practical case in a test
-
 
 #### Logging: Practical case fixing N+1
 
@@ -1148,18 +1122,13 @@ Is a Delete Form necessary?
 
 ### Interactive Debugging
 
-
 #### Introduction to the debug gem
-
 
 #### Navigating the execution flow
 
-
 #### Adding breakpoints
 
-
 #### Integrating with Visual Studio Code
-
 
 #### Using the web-console gem
 
@@ -1170,7 +1139,6 @@ Is a Delete Form necessary?
 ### Fixing Common Errors and Researching
 
 #### Fixing the most common errors when using Ruby on Rails
-
 
 #### Researching on the internet
 
