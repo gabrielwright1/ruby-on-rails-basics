@@ -958,7 +958,7 @@ Is a Delete Form necessary?
 
 ### Smarter Models
 
-Smart Models by Design:
+#### Smart Models by Design:
 
 - "Fat model, skinny controller"
 - Move most business logic to models
@@ -1003,9 +1003,41 @@ user.last_name_first # Skoglund Kevin
 user.abbrev_name # K. Skoglund
 ```
 
-#### Smart models by design
-
 #### More ActiveRecord query methods
+
+Query Condition: AND
+
+- Rails does not fire off the query right away, it waits until it is needed
+
+```ruby
+Product.where(visible: true, sold_out: false)
+# SELECT * FROM products
+# WHERE visible = TRUE AND sold_out = FALSE
+
+Product.where(visible: true).where("created_at > ?", 1.year.ago)
+# SELECT * FROM products
+# WHERE visible = TRUE
+# AND created_at > '2022-01-01 00:00:00'
+```
+
+Query Condition: OR
+
+```ruby
+Product.where("created_at < ?", 1.year.ago).or(
+    Product.where(sold_out:true)
+)
+sold_out = Product.where(sold_out:true)
+Product.where("created_at < ?", 1.year.ago).or(sold_out)
+```
+
+Query Condition: NOT
+
+```ruby
+Product.where(visible: true).where.not("created_at > ?", 1.year.ago)
+# SELECT * FROM products
+# WHERE visible = TRUE
+# AND NOT created_at > '2022-01-01 00:00:00'
+```
 
 #### Select data from a query
 
