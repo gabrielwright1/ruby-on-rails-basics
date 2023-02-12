@@ -1250,6 +1250,8 @@ payment.process!
 
 ### Data Validations
 
+#### Overview of validation methods
+
 Validations:
 
 - Ensure data meets requirements before saving to database
@@ -1310,7 +1312,7 @@ validates_exclusion_of :zone_id, in: [78, 109]
 ```ruby
 validates_format_of :zipcode, with: /\d{5}/
 
-# keyword
+# useful keywords
 :with
 ```
 
@@ -1365,9 +1367,21 @@ Validation Options:
 :message (for example, "can't be blank")
 ```
 
-#### Overview of validation methods
-
 #### Write validations
+
+What to validate:
+
+- What are your data concerns?
+- Decide what good and bad data look like
+- What restrictions does your database impose (types, lengths, or null values)
+- What would stop your application from working?
+
+What not to validate:
+
+- IDs
+- Foreign keys
+- Timestamps
+- Booleans
 
 #### Use the multipurpose validates methods
 
