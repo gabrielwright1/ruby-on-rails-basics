@@ -1679,8 +1679,13 @@ Tag has_and_belongs_to_many :tasks
 
 #### Rich join associations
 
-![rich-association](https://user-images.githubusercontent.com/52660296/218291836-e352c6d9-431d-4ee3-870c-e2ff3843c164.PNG)
+- Join table with two indexed foreign keys (like HABTM)
+- Requires a primary key column (:id)
+- Join table has its own model
+- No table name conventions to follow
+- `Tip`: names ending in "-ments" or "-ships" work well
 
+![rich-association](https://user-images.githubusercontent.com/52660296/218291836-e352c6d9-431d-4ee3-870c-e2ff3843c164.PNG)
 
 #### Traverse a rich join association
 
