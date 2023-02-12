@@ -1689,6 +1689,39 @@ Tag has_and_belongs_to_many :tasks
 
 #### Traverse a rich join association
 
+Traverse HABTM
+
+```ruby
+task.tags
+# [tag1, tag2, tag3]
+tag.tasks
+# [task1, task2]
+task.task_assignments
+# [task_assignment1, task_assignment2]
+task.users
+# NoMethodError
+task.task_assignments.map { |ta| ta.user }
+# [user1, user2]
+```
+
+`has_many :through`
+
+- Allows reaching across a rich join
+- Treats rich join like a HABTM join
+- Create a functional rich join first
+
+```ruby
+class Task < ApplicationRecord
+    has_many :task_assignments
+    has_many :users, through: :task_assignments
+end
+
+class User < ApplicationRecord
+    has_many :task_assignments
+    has_many :tasks, through: :task_assignments
+end
+```
+
 #### Join tables during queries
 
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
