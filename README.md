@@ -1591,6 +1591,17 @@ Many-to-many
 
 #### Create a one-to-many associations
 
+```ruby
+class Teacher < ApplicationRecord
+    has_many :courses
+end
+
+class Course < ApplicationRecord
+    # has table column "teacher_id"
+    belongs_to :teacher
+end
+```
+
 #### Use a one-to-many association
 
 #### Destroy dependent related records
