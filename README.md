@@ -1760,8 +1760,10 @@ SELECT categories.* FROM categories WHERE categories.id = 2
 ```
 
 ```ruby
-Task.includes(:category).where(completed: false, category: {id: 1..50})
-Task.includes(:category).references(:categories).where("categories.name LIKE '%Week%'")
+Task.includes(:category).
+    where(completed: false, category: {id: 1..50})
+Task.includes(:category).
+    references(:categories).where("categories.name LIKE '%Week%'")
 ```
 
 Include and Narrow Results:
@@ -1776,7 +1778,8 @@ INNEr JOIN categories ON categories.id = tasks.category_id
 ```
 
 ```ruby
-Tasks.joins(:category).where(completed: false, category: {id: 1..50})
+Tasks.joins(:category).
+    where(completed: false, category: {id: 1..50})
 ```
 
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
