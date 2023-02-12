@@ -1041,6 +1041,111 @@ Product.where(visible: true).where.not("created_at > ?", 1.year.ago)
 
 #### Select data from a query
 
+Methods:
+
+- all
+- first
+- last
+- limit
+- count
+- any?
+- none?
+- many?
+- one?
+
+```ruby
+Customer.all
+# SELECT * FROM customers
+```
+
+```ruby
+customers = Customer.all
+customers[0..4]
+# SELECT * FROM customers
+```
+
+```ruby
+Customer.first
+# SELECT * FROM customers ORDER BY id ASC LIMIT 1
+```
+
+```ruby
+Customer.last
+# SELECT * FROM customers ORDER BY id DESC
+```
+
+```ruby
+customers = Customer.limit(5)
+# SELECT * FROM customers ORDER BY id ASC LIMIT 5
+```
+
+```ruby
+customers = Customer.first(5)
+# SELECT * FROM customers ORDER BY id ASC LIMIT 5
+```
+
+```ruby
+Customer.count
+# SELECT COUNT(*) FROM customers
+```
+
+```ruby
+Customer.any?
+Customer.none?
+# SELECT 1 AS one FROM customers LIMIT 1
+```
+
+```ruby
+Customer.many?
+Customer.one?
+```
+
+Select specific columns
+
+Useful methods:
+
+- select
+- pluck
+- ids
+
+Using select:
+
+```ruby
+product = Product.select(:id, :name).first
+# SELECT id, name FROM products ORDER BY id ASC LIMIT 1
+# => <Product id: 1, name: "Coffee mug">
+
+product.id
+# => 1
+
+product.name
+# => Coffee mug
+
+product.description
+# => ActiveModel::MissingAttributeError
+```
+
+Using pluck (better alternative):
+
+```ruby
+Product.pluck(:id, :name)
+# SELECT id, name FROM products
+# => [[1, "Coffee Mug"], ...]
+
+Product.all.map{|p| [p.id, p.name]}
+# SELECT * FROM products
+# => [[1, "Coffee Mug"], ...]
+
+Product.ids
+# => [1, 3, 5, 14, 32, 35]
+
+Product.pluck(:id)
+# => [1, 3, 4, 5, 6, 7]
+
+Product.all.map{|p| p.id}
+# => [1,3,5,6,7,8]
+```
+
 #### Named scopes
 
 #### Non-database attributes
