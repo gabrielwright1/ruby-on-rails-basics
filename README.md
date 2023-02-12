@@ -1476,6 +1476,25 @@ Destroy:
 
 #### Use callbacks to automate actions
 
+```ruby
+class Customer < ApplicationRecord
+    before_validation :format_phone
+    before_save :geocode_address
+    after_commit :notify_admins
+
+    private
+
+        def format_phone
+        end
+
+        def geocode_address
+        end
+
+        def notify_admins
+        end
+end
+```
+
 #### Execute callbacks conditionally
 
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
