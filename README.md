@@ -1385,6 +1385,35 @@ What not to validate:
 
 #### Use the multipurpose validates methods
 
+```ruby
+class User < ApplicationRecord
+    validates_presence_of :email
+    validates_length_of :email, { maximum: 50 }
+    validates_uniqueness_of :email
+    validates_format_of :email, { with: EMAIL_REGEX }
+    validates_confirmation_of :email
+end
+
+# using the validates method instead
+class User < ApplicationRecord
+    validates :email,   presence: true,
+                        length: { maximum: 50},
+                        uniqueness: true,
+                        format:{ with: EMAIL_REGEX},
+                        confirmation: true
+
+    validates :email,   presence: true,
+                        numericality: true,
+                        length: options_hash,
+                        format: { with: regex },
+                        inclusion: { in: array_or_range },
+                        exclusion: { in: array_or_range },
+                        acceptance: true,
+                        uniqueness: true,
+                        confirmation: true
+end
+```
+
 #### Write custom validations
 
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
