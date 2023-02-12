@@ -1679,7 +1679,8 @@ Tag has_and_belongs_to_many :tasks
 
 #### Rich join associations
 
-![rich-join-association-graphic](https://user-images.githubusercontent.com/52660296/218291742-14039ba1-a4ec-4684-9492-bc8d1ad87daf.png)
+![rich-association](https://user-images.githubusercontent.com/52660296/218291836-e352c6d9-431d-4ee3-870c-e2ff3843c164.PNG)
+
 
 #### Traverse a rich join association
 
