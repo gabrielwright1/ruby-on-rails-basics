@@ -1184,6 +1184,68 @@ Product.search("mug").with_style(34)
 
 #### Non-database attributes
 
+Instance Attributes
+
+- Attributes are methods to access values
+- Useful for setting temporary states in an object
+- Values will not be stored in a database
+- Can affect the values and behaviors of other methods
+
+```ruby
+attr_reader
+attr_writer
+attr_accessor
+```
+
+```ruby
+class Customer
+    attr_accessor :status
+    def status
+        @status
+    end
+
+    def status=(value)
+        @status = value
+    end
+end
+```
+
+```ruby
+class Payment < ApplicationRecord
+    attr_writer :card_number
+    attr_reader :transaction_error
+
+    def process!
+        result = CardProcessor.charge(@card_number, amount)
+        @transaction_error = result["error"]
+    end
+end
+
+# calling it here
+payment = Payment.new(payment_params)
+payment.process!
+error = payment.transaction_error
+```
+
+```ruby
+class Payment < ApplicationRecord
+    attr_accessor :zone
+
+    def process!
+        if EU_TLDS.include?(@zone)
+            EuroPayment.capture(@card_number, euro_amount)
+        else
+            AmeriCharge.charge(@card_number, amount)
+        end
+    end
+end
+
+# calling it here
+payment = Payment.new(payment_params)
+payment.zone = request.domain.split('.').last
+payment.process!
+```
+
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ### Data Validations
