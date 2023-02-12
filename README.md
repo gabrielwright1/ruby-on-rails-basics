@@ -1416,6 +1416,20 @@ end
 
 #### Write custom validations
 
+```ruby
+class MyModel < ApplicationRecord
+    validate :custom_method
+
+    private
+
+    def custom_method
+        if test_case
+            errors.add(:attribute, "message")
+        end
+    end
+end
+```
+
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ### ActiveRecord Callbacks
