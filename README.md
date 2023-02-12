@@ -1540,6 +1540,55 @@ customer.save
 
 #### Overview of associations
 
+Association types:
+
+- One to one
+- One to many
+- Many to many
+
+One-to-One Association:
+
+- Relates one record to exactly one other record
+- Classroom has one teacher
+- Teacher belongs to a classroom
+- Foreign key on a teacher's table
+
+One-to-Many Association:
+
+- Relates one record to many records
+- Teacher has many courses
+- Course belongs to a teacher
+- Foreign key on courses table
+
+Many-to-Many Association:
+
+- Relates many records to many records
+- Course has many students and belong to many students
+- Student has many courses and belongs to many courses
+- Two foreign keys in a join table
+
+Database Relationships:
+
+- Create database relationship
+- Add foreign key column or create join table
+- Define the association in models
+
+Association Methods:
+
+One-to-one
+
+- `has_one`
+- `belongs_to`
+
+One-to-many
+
+- `has_many`
+- `belongs_to`
+
+Many-to-many
+
+- `has_and_belongs_to_many`
+
 #### Create a one-to-many associations
 
 #### Use a one-to-many association
