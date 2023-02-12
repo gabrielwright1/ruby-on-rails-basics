@@ -1497,6 +1497,43 @@ end
 
 #### Execute callbacks conditionally
 
+Conditional Callbacks:
+
+- Execute callback methods only when a condition is met
+- Condition should return `true` or `false`
+
+```ruby
+# useful keywords
+:if
+:unless
+```
+
+```ruby
+class Customer < ApplicationRecord
+    after_commit :send_welcome, if: :country_emailable?
+    private
+
+        def country_emailable?
+            Country.emailable.ids.include?(country_id)
+        end
+end
+
+# alternative syntax using Proc object
+class Customer < ApplicationRecord
+    after_commit :send_welcome,
+        if: Proc.new {|c| c.email.present? } # Proc object is an encapsulated block of code
+
+    attr_accessor :skip_geocode
+    before_save :geocode, unless: :skip_geocode
+end
+
+# calling it here
+customer = Customer(5329)
+customer.street = "123 Main Street"
+customer.skip_geocode = true
+customer.save
+```
+
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
 ### ActiveRecord Associations
