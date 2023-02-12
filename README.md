@@ -1769,6 +1769,7 @@ Task.includes(:category).
 Include and Narrow Results:
 
 ```ruby
+# include everything
 Task.joins(:category).all
 
 # SQL equivalent
@@ -1778,6 +1779,7 @@ INNEr JOIN categories ON categories.id = tasks.category_id
 ```
 
 ```ruby
+# narrow scope of results
 Tasks.joins(:category).
     where(completed: false, category: {id: 1..50})
 ```
