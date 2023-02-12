@@ -497,11 +497,11 @@ users = users.order('last_name ASC').limit(5)
 
 users.each {|user| ... }
 
-##
-# SELECT users.* FROM users
-# WHERE users.first_name = 'Kevin'
-# ORDER BY users.last_name ASC
-# LIMIT 5
+# SQL equivalent
+SELECT users.* FROM users
+WHERE users.first_name = 'Kevin'
+ORDER BY users.last_name ASC
+LIMIT 5
 ```
 
 #### Use the Rails console to interact with a Rails project
@@ -1012,13 +1012,17 @@ Query Condition: AND
 
 ```ruby
 Product.where(visible: true, sold_out: false)
-# SELECT * FROM products
-# WHERE visible = TRUE AND sold_out = FALSE
+
+# SQL equivalent
+SELECT * FROM products
+WHERE visible = TRUE AND sold_out = FALSE
 
 Product.where(visible: true).where("created_at > ?", 1.year.ago)
-# SELECT * FROM products
-# WHERE visible = TRUE
-# AND created_at > '2022-01-01 00:00:00'
+
+# SQL equivalent
+SELECT * FROM products
+WHERE visible = TRUE
+AND created_at > '2022-01-01 00:00:00'
 ```
 
 Query Condition: OR
@@ -1035,9 +1039,11 @@ Query Condition: NOT
 
 ```ruby
 Product.where(visible: true).where.not("created_at > ?", 1.year.ago)
-# SELECT * FROM products
-# WHERE visible = TRUE
-# AND NOT created_at > '2022-01-01 00:00:00'
+
+# SQL equivalent
+SELECT * FROM products
+WHERE visible = TRUE
+AND NOT created_at > '2022-01-01 00:00:00'
 ```
 
 #### Select data from a query
@@ -1056,44 +1062,52 @@ Methods:
 
 ```ruby
 Customer.all
-# SELECT * FROM customers
+# SQL equivalent
+SELECT * FROM customers
 ```
 
 ```ruby
 customers = Customer.all
 customers[0..4]
-# SELECT * FROM customers
+# SQL equivalent
+SELECT * FROM customers
 ```
 
 ```ruby
 Customer.first
-# SELECT * FROM customers ORDER BY id ASC LIMIT 1
+# SQL equivalent
+SELECT * FROM customers ORDER BY id ASC LIMIT 1
 ```
 
 ```ruby
 Customer.last
-# SELECT * FROM customers ORDER BY id DESC
+# SQL equivalent
+SELECT * FROM customers ORDER BY id DESC
 ```
 
 ```ruby
 customers = Customer.limit(5)
-# SELECT * FROM customers ORDER BY id ASC LIMIT 5
+# SQL equivalent
+SELECT * FROM customers ORDER BY id ASC LIMIT 5
 ```
 
 ```ruby
 customers = Customer.first(5)
-# SELECT * FROM customers ORDER BY id ASC LIMIT 5
+# SQL equivalent
+SELECT * FROM customers ORDER BY id ASC LIMIT 5
 ```
 
 ```ruby
 Customer.count
-# SELECT COUNT(*) FROM customers
+# SQL equivalent
+SELECT COUNT(*) FROM customers
 ```
 
 ```ruby
 Customer.any?
 Customer.none?
-# SELECT 1 AS one FROM customers LIMIT 1
+# SQL equivalent
+SELECT 1 AS one FROM customers LIMIT 1
 ```
 
 ```ruby
@@ -1113,7 +1127,9 @@ Using select:
 
 ```ruby
 product = Product.select(:id, :name).first
-# SELECT id, name FROM products ORDER BY id ASC LIMIT 1
+
+# SQL equivalent
+SELECT id, name FROM products ORDER BY id ASC LIMIT 1
 # => <Product id: 1, name: "Coffee mug">
 
 product.id
@@ -1130,11 +1146,15 @@ Using pluck (better alternative):
 
 ```ruby
 Product.pluck(:id, :name)
-# SELECT id, name FROM products
+
+# SQL equivalent
+SELECT id, name FROM products
 # => [[1, "Coffee Mug"], ...]
 
 Product.all.map{|p| [p.id, p.name]}
-# SELECT * FROM products
+
+# SQL equivalent
+SELECT * FROM products
 # => [[1, "Coffee Mug"], ...]
 
 Product.ids
@@ -1723,6 +1743,41 @@ end
 ```
 
 #### Join tables during queries
+
+Include Joined Data:
+
+```ruby
+Task.includes(:category).all
+
+# SQL equivalent
+SELECT tasks.*, categories.* FROM tasks
+LEFT OUTER JOIN categories
+ON categories.id = tasks.category_id
+# -- OR --
+SELECT tasks.* FROM tasks
+SELECT categories.* FROM categories WHERE categories.id = 1
+SELECT categories.* FROM categories WHERE categories.id = 2
+```
+
+```ruby
+Task.includes(:category).where(completed: false, category: {id: 1..50})
+Task.includes(:category).references(:categories).where("categories.name LIKE '%Week%'")
+```
+
+Include and Narrow Results:
+
+```ruby
+Task.joins(:category).all
+
+# SQL equivalent
+SELECT tasks.*
+FROM tasks
+INNEr JOIN categories ON categories.id = tasks.category_id
+```
+
+```ruby
+Tasks.joins(:category).where(completed: false, category: {id: 1..50})
+```
 
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
 
