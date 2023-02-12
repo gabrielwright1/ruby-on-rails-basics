@@ -1602,9 +1602,25 @@ class Course < ApplicationRecord
 end
 ```
 
-#### Use a one-to-many association
-
 #### Destroy dependent related records
+
+```ruby
+class NewsArticle < ApplicationRecord
+    has_many :comments, dependent: :destroy
+end
+
+class Comment < ApplicationRecord
+    belongs_to :news_article
+end
+```
+
+Dependent Options:
+
+```ruby
+:destroy
+:delete_all
+:nullify
+```
 
 #### Has and belongs to many associations
 
