@@ -1148,6 +1148,40 @@ Product.all.map{|p| p.id}
 
 #### Named scopes
 
+- Commonly-used queries defined in a model
+- Defined using built-in query methods
+- Use a lambda function, a block of code for later use
+
+```ruby
+class Product < ApplicationRecord
+    scope :active, -> { where(active: true) }
+    scope :recent, -> { where("created_at > ?", 3.months.ago) }
+    scope :sorted, -> { order(:name)}
+end
+
+# Calling it here
+Product.active.recent.sorted
+# this is the same as above
+Product.where(active: true).where("created_at > ?", 3.months.ago).order(:name)
+```
+
+Lambda functions:
+
+- Encapsulates logic and data in a portable variable to be used later
+
+```ruby
+class Product < ApplicationRecord
+    scope :search, lambda { |kw|
+        keyword = (kw || '').downcase
+        where("LOWER(name) LIKE ?", "%{keyword}%")
+    }
+    scope :with_style, -> (sid) { where(style_id: sid) }
+end
+
+# Calling it here
+Product.search("mug").with_style(34)
+```
+
 #### Non-database attributes
 
 [Back to top](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-learning-plan)
