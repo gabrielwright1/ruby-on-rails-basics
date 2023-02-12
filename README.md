@@ -1250,6 +1250,121 @@ payment.process!
 
 ### Data Validations
 
+Validations:
+
+- Ensure data meets requirements before saving to database
+- Validation code resides in models
+- Failed validations: record will not save, will track errors
+
+```ruby
+class Product < ApplicationRecord
+    validates_presence_of :name
+    validates_length_of :name, maximum: 50
+    validates_numericality_of :price, greater_than: 0
+    validates_uniqueness_of :stock_number
+end
+```
+
+`validates_presence_of`:
+
+- Attribute must not be blank (nil, false, "", " ", [], {})
+
+```ruby
+# syntax
+validates_presence_of :name
+```
+
+`validates_length_of`:
+
+- Attribute must meet length requirements
+
+```ruby
+# syntax
+validates_length_of :name, within: 3..40
+
+# useful keywords
+:is
+:minimum, :maximum
+:within
+```
+
+`validates_inclusion_of`:
+
+- Attribute must be in a list of choices (array or range)
+
+```ruby
+validates_inclusion_of :status,
+    in: ['new', 'reviewing', 'approved', 'deleted']
+
+validates_exclusion_of :zone_id, in: [78, 109]
+
+# useful keywords
+:in
+:within
+```
+
+`validates_format_of`:
+
+- Attribute must match a regular expression
+
+```ruby
+validates_format_of :zipcode, with: /\d{5}/
+
+# keyword
+:with
+```
+
+`validates_uniqueness_of`:
+
+- Attribute must not exist in the database
+
+```ruby
+validates_uniqueness_of :username
+:case_sensitive
+:scope
+```
+
+`validates_acceptance_of`:
+
+- Attribute must be accepted
+- Creates a virtual attirbute if no table column
+
+```ruby
+# syntax
+validates_acceptance_of :terms
+:accept (expected value, "1")
+```
+
+`validates_confirmation_of`:
+
+- Attribute must be confirmed by being entered twice
+- Creates a virtual attribute for confirmation
+- Only validates when confirmation attribute is not nil
+
+```ruby
+# syntax
+validates_confirmation_of :password
+```
+
+`validates_associated`:
+
+- Associated object (or objects) must all be valid
+- First argument: association name; not an attribute
+- Calls `#valid?` on the object or array of objects
+- Does not fail if object does not exist
+- Beware of infinite loops and long cascades
+
+Validation Options:
+
+```ruby
+:allow_nil
+:allow_blank
+:on (:save, :create, :update)
+:if
+:unless
+:message (for example, "can't be blank")
+```
+
 #### Overview of validation methods
 
 #### Write validations
