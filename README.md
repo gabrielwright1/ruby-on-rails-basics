@@ -1622,7 +1622,60 @@ Dependent Options:
 :nullify
 ```
 
-#### Has and belongs to many associations
+#### Has and belongs to many associations (HABTM)
+
+- Used when an object has many objects that belong to it but not exclusively
+
+```ruby
+# syntax
+Project has_and_belongs_to_many :collaborators
+BlogPost has_and_belongs_to_many :categories
+```
+
+Database Relationship
+
+- Requires a join table
+- Two foreign keys; index both keys together
+- No model for join table
+- No primary key column
+- No timestamp columns
+
+Join Table Naming:
+
+- Convention: `table1+_+table2`
+- Alphabetical order
+- Plural table names
+
+```ruby
+# syntax
+Project and Collaborator: collaborators_projects
+BlogPost and Category: blog_posts_categories
+```
+
+Migration
+
+```ruby
+# command
+rails generate migration
+    CreateJoinTableModel1Model2 table1 table2
+
+# migration
+class CreateJoinTableBlogPostCategory < ActiveRecord::Migration
+    def change
+        create_join_table :blog_posts, :categories do |t|
+        # t.index [:blog_post_id, :category_id]
+        # t.index [:category_id, :blog_post_id]
+        end
+    end
+end
+```
+
+Has and Belongs to Many:
+
+```ruby
+Task has_and_belongs_to_many :tags
+Tag has_and_belongs_to_many :tasks
+```
 
 #### Rich join associations
 
