@@ -6,6 +6,7 @@
 - [Ruby on Rails Controllers and Views](https://www.linkedin.com/learning/ruby-on-rails-controllers-and-views?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [See Notes](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-controllers-and-views)
 - [Ruby on Rails Models and Associations](https://www.linkedin.com/learning/ruby-on-rails-models-and-associations?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [See Notes](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-models-and-associations)
 - [Ruby on Rails: Debugging](https://www.linkedin.com/learning/ruby-on-rails-debugging?contextUrn=urn%3Ali%3AlyndaLearningPath%3A580902bf3dd5598d00538566&u=76281980) - [See Notes](https://github.com/gabrielwright1/ruby-on-rails-basics#ruby-on-rails-debugging)
+- [Ruby: Testing with RSpec](https://www.linkedin.com/learning/ruby-testing-with-rspec/welcome?autoplay=true&resume=false&u=76281980)
 
 ## Overview of topics:
 
@@ -1435,6 +1436,43 @@ end
 ### ActiveRecord Callbacks
 
 #### Overview of callbacks
+
+Callbacks:
+
+- Callbacks offer opportunities to intervene in an object's life cycle
+- Like pausing at key moments in internal processes to ask if you have code to run
+- Run code automatically before or after an object is created, updated, or destroyed
+- Set values on the current object
+- Create, update, or destroy other records
+- Perform clean up or housekeeping tasks
+- Log information
+- Send an email or make an API call
+
+Create:
+
+- `before_validation`
+- `after_validation`
+- `before_save`
+- `before_create`
+- `after_create`
+- `after_save`
+- `after_commit`
+
+Update:
+
+- `before_validation`
+- `after_validation`
+- `before_save`
+- `before_update`
+- `after_update`
+- `after_save`
+- `after_commit`
+
+Destroy:
+
+- `before_destroy`
+- `after_destroy`
+- `after_commit`
 
 #### Use callbacks to automate actions
 
